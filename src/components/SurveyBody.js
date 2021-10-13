@@ -346,6 +346,7 @@ const SurveyBody = () => {
             <option value="5stick">5 শলাকা</option>
             <option value="5_19stick">৫ শলাকা – ১৯ শলাকা</option>
             <option value="20stickOrPlus">২০ শলাকা অথবা তার বেশি</option>
+            <option value="0stick">০ শলাকা</option>
           </Form.Control>
         </Form.Group>
       </div>
@@ -396,6 +397,7 @@ const SurveyBody = () => {
             q13 === "sevenTaka" ||
             q13 === "eightTaka" ||
             q13 === "tenTaka" ||
+            q10 === "0stick" ||
             q11 === "yes" ||
             q11 === "no"
               ? "block"
