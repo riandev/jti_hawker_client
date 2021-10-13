@@ -27,6 +27,7 @@ const SurveyBody = () => {
   const [q16, setQ16] = useState(null);
   const [q17, setQ17] = useState(null);
   const [q18, setQ18] = useState(null);
+  const [remakrsQ10, setRemakrsQ10] = useState(null);
 
   const handleText = (e) => {
     setSearchNumber(e.target.value);
@@ -91,6 +92,9 @@ const SurveyBody = () => {
   };
   const q18value = (e) => {
     setQ18(e.target.value);
+  };
+  const remarksq10 = (e) => {
+    setRemakrsQ10(e.target.value);
   };
   const agent = sessionStorage.getItem("agent");
   const handleSubmit = (e) => {
@@ -346,7 +350,7 @@ const SurveyBody = () => {
             <option value="5stick">5 শলাকা</option>
             <option value="5_19stick">৫ শলাকা – ১৯ শলাকা</option>
             <option value="20stickOrPlus">২০ শলাকা অথবা তার বেশি</option>
-            <option value="0stick">০ শলাকা</option>
+            <option value="others">অন্যান্য</option>
           </Form.Control>
         </Form.Group>
       </div>
@@ -397,7 +401,6 @@ const SurveyBody = () => {
             q13 === "sevenTaka" ||
             q13 === "eightTaka" ||
             q13 === "tenTaka" ||
-            q10 === "0stick" ||
             q11 === "yes" ||
             q11 === "no"
               ? "block"
@@ -489,6 +492,25 @@ const SurveyBody = () => {
           </Form.Control>
         </Form.Group>
       </div>
+      <div
+        style={{
+          display: q10 === "others" ? "block" : "none",
+        }}
+        className="mt-2"
+      >
+        <Form.Group
+          className="mb-3"
+          onChange={remarksq10}
+          as={Row}
+          controlId="exampleForm.ControlInput1"
+        >
+          <Form.Control
+            className="w-50 ml-3"
+            type="text"
+            placeholder="Type Remarks"
+          />
+        </Form.Group>
+      </div>
       {/* Final Question */}
       <div
         style={{
@@ -500,6 +522,7 @@ const SurveyBody = () => {
             q4 === "no" ||
             q6 === "no" ||
             q9 === "no" ||
+            q10 === "others" ||
             q17 === "taste" ||
             q17 === "packOrStickDesign" ||
             q17 === "availability" ||
