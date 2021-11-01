@@ -205,7 +205,7 @@ const SurveyBody = () => {
         <p className="text-secondary">
           (যদি উত্তর আসে ‘১৮ বছরের বেশি’ তবে কথা বলা চালিয়ে যাবেন, নতুবা
           ধন্যবাদ দিয়ে কথা শেষ করে সংযোগ কেটে দিন){" "}
-          <b> (১৮ বছরের নিচে/৩৫ বছরের বেশি হলে, ধন্যবাদ দিয়ে সংযোগ কেটে দিন)</b>
+          <b> (১৮ বছরের নিচে হলে, ধন্যবাদ দিয়ে সংযোগ কেটে দিন)</b>
         </p>
         <Form.Group onChange={q3value} as={Row}>
           <Form.Control as="select" className="w-50 ml-3">
@@ -213,7 +213,7 @@ const SurveyBody = () => {
             <option value="-18">১৮ এর নিচে</option>
             <option value="18-23">১৮-২৩</option>
             <option value="24-29">২৪-২৯</option>
-            <option value="30-25">৩০-৩৫</option>
+            <option value="30-35">৩০-৩৫</option>
             <option value="35+">৩৫+</option>
           </Form.Control>
         </Form.Group>
@@ -221,7 +221,7 @@ const SurveyBody = () => {
       <div
         style={{
           display:
-            q3 === "18-23" || q3 === "24-29" || q3 === "30-25"
+            q3 === "18-23" || q3 === "24-29" || q3 === "30-35" || q3 === "35+"
               ? "block"
               : "none",
         }}
@@ -518,7 +518,6 @@ const SurveyBody = () => {
             q2 === "no" ||
             q2 === "busy" ||
             q3 === "-18" ||
-            q3 === "35+" ||
             q4 === "no" ||
             q6 === "no" ||
             q9 === "no" ||
